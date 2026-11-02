@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TechKanvas | Microsoft 365 Consulting, Coaching & Support</title>
+<meta name="description" content="TechKanvas is a Microsoft 365 consultant offering one-on-one coaching, setup, technical support and advisory for individuals and small businesses.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%234b5563%22/><text x=%2250%22 y=%2268%22 font-size=%2258%22 text-anchor=%22middle%22 fill=%22%23ffc928%22 font-family=%22Arial%22 font-weight=%22700%22>TK</text></svg>">
+<style>
+:root{--gray:#4b5563;--yellow:#ffc928;--gold:#e8a900;--gold-text:#8f6400;--blue:#ffc928;--blue-dark:#e8a900;--ink:#2b2f36;--muted:#5f6670;--line:#e6e6e1;--soft:#f6f6f3;--radius:12px;--font:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font-family:var(--font);color:var(--ink);background:#fff;line-height:1.65}
+.container{width:min(1100px,92%);margin:0 auto}
+a{color:var(--gold-text)}
+h1,h2,h3{line-height:1.2;margin:0 0 .6em}
+h1{font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,3.5vw,2.2rem)}
+h3{font-size:1.1rem}
+p{margin:0 0 1em}
+
+.site-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.15rem;color:var(--ink);text-decoration:none}
+.logo-mark{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--gray);color:var(--yellow);font-size:.85rem;font-weight:800;letter-spacing:-.02em;box-shadow:inset 0 -4px 0 var(--yellow)}
+.logo-text{display:flex;gap:1px;font-weight:800;letter-spacing:-.01em}
+.lt{color:var(--gray)}
+.lk{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{color:var(--ink);text-decoration:none;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--gold-text)}
+.nav-links a.btn,.nav-links a.btn:hover{color:var(--ink)}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;font-size:1.3rem;padding:4px 10px;cursor:pointer}
+
+.btn{display:inline-block;background:var(--yellow);color:var(--ink);border:2px solid var(--blue);padding:12px 24px;border-radius:8px;font:600 1rem var(--font);text-decoration:none;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s}
+.btn:hover{background:var(--blue-dark);border-color:var(--blue-dark);transform:translateY(-2px);box-shadow:0 6px 16px rgba(232,169,0,.35)}
+.btn-small{padding:8px 18px}
+.btn-outline{background:#fff;color:var(--ink);border-color:var(--gray)}
+.btn-outline:hover{background:var(--soft);color:var(--ink);border-color:var(--gray)}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+
+.hero{padding:96px 0 72px;background:linear-gradient(180deg,var(--soft),#fff);border-bottom:4px solid var(--yellow)}
+.hero-inner{max-width:760px}
+.eyebrow{color:var(--gold-text);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem}
+.lead{font-size:1.15rem;color:var(--muted)}
+
+.audience{padding:8px 0 40px}
+.pill{border:1px solid var(--line);border-radius:var(--radius);padding:16px;text-align:center;font-weight:500;font-size:.95rem;transition:border-color .2s,transform .2s}
+.pill:hover{border-color:var(--blue);transform:translateY(-3px)}
+
+.section{padding:80px 0}
+.alt{background:var(--soft)}
+.section-intro{color:var(--muted);max-width:640px;margin-bottom:36px}
+.section-intro.left{margin-bottom:24px}
+.grid{display:grid;gap:22px}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:var(--radius);padding:28px;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(20,33,61,.08)}
+.card ul{margin:0;padding-left:20px;color:var(--muted)}
+.card li{margin-bottom:6px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.steps{display:grid;gap:18px}
+.step{display:flex;gap:16px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.step span{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--yellow);color:var(--ink);font-weight:700}
+.step h3{margin-bottom:.2em}
+.step p{margin:0;color:var(--muted)}
+.values{display:grid;gap:16px}
+.value{border-left:4px solid var(--blue);background:var(--soft);padding:16px 20px;border-radius:0 var(--radius) var(--radius) 0}
+.value strong{display:block;font-size:1.4rem;color:var(--ink)}
+.value span{color:var(--muted)}
+
+.form{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:grid;gap:16px}
+.form label{display:grid;gap:6px;font-weight:600;font-size:.92rem}
+.form input,.form select,.form textarea{font:1rem var(--font);padding:11px 12px;border:1px solid #cdd5e1;border-radius:8px;transition:border-color .2s,box-shadow .2s}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(255,201,40,.35)}
+.form .invalid{border-color:#c62828}
+.form-note{margin:0;font-size:.85rem;color:var(--muted)}
+
+.site-footer{background:var(--ink);padding:26px 0;font-size:.9rem;color:#d4d6da}
+.site-footer a{color:var(--yellow)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+@media(max-width:900px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr;gap:32px}
+}
+@media(max-width:700px){
+  .menu-toggle{display:block}
+  .nav-links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 4%}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 0}
+  .nav-links a.btn{text-align:center;margin-top:6px}
+  .grid-2,.grid-4{grid-template-columns:1fr}
+  .hero{padding:64px 0 48px}
+  .section{padding:56px 0}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a href="#home" class="logo"><span class="logo-mark">TK</span><span class="logo-text"><span class="lt">Tech</span><span class="lk">Kanvas</span></span></a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <nav class="nav-links" id="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#coaching">Coaching</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="btn btn-small">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow">Microsoft 365 Consultant</p>
+    <h1>Empowering Individuals and Businesses Through Microsoft 365.</h1>
+    <p class="lead">TechKanvas helps individuals, IT professionals and small businesses understand, set up, manage and troubleshoot Microsoft 365, with personal, practical, one-on-one guidance.</p>
+    <div class="actions">
+      <a href="#contact" class="btn">Book a Consultation</a>
+      <a href="#services" class="btn btn-outline">Explore Services</a>
+    </div>
+  </div>
+</section>
+
+<section class="audience">
+  <div class="container grid grid-4">
+    <div class="pill">Individuals learning Microsoft 365</div>
+    <div class="pill">IT professionals building admin skills</div>
+    <div class="pill">Small business owners adopting Microsoft 365</div>
+    <div class="pill">Businesses without a Microsoft 365 admin</div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="container">
+    <h2>Services</h2>
+    <p class="section-intro">Practical help at every stage of your Microsoft 365 journey, from learning the basics to running a smooth environment.</p>
+    <div class="grid grid-2">
+      <article class="card">
+        <h3>One-on-One Microsoft 365 Coaching</h3>
+        <ul>
+          <li>Microsoft 365 administration fundamentals</li>
+          <li>Exchange Online administration</li>
+          <li>Microsoft Entra ID administration</li>
+          <li>Microsoft Teams administration</li>
+          <li>Licensing and subscriptions</li>
+          <li>Practical, hands-on learning sessions</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Setup and Consultation</h3>
+        <ul>
+          <li>Microsoft 365 tenant setup</li>
+          <li>Custom domain and DNS configuration</li>
+          <li>Business email setup</li>
+          <li>Exchange Online configuration</li>
+          <li>Licensing recommendations</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Technical Support</h3>
+        <ul>
+          <li>Exchange Online troubleshooting</li>
+          <li>Mail flow issues</li>
+          <li>Outlook configuration</li>
+          <li>Mailbox permissions</li>
+          <li>Distribution groups</li>
+          <li>General Microsoft 365 administration issues</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Business Advisory</h3>
+        <ul>
+          <li>Microsoft 365 adoption and planning</li>
+          <li>Choosing the right subscription</li>
+          <li>Business email migration planning</li>
+          <li>Cloud collaboration recommendations</li>
+          <li>Security and account management recommendations</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="coaching" class="section alt">
+  <div class="container split">
+    <div>
+      <h2>One-on-One Coaching</h2>
+      <p class="section-intro left">Learn Microsoft 365 with a real person who has done the work, at your pace and around your goals.</p>
+      <a href="#contact" class="btn">Book a Coaching Session</a>
+    </div>
+    <div class="steps">
+      <div class="step"><span>1</span><div><h3>Personalized</h3><p>Sessions are shaped around your role, experience level and goals, whether you are starting out or sharpening admin skills.</p></div></div>
+      <div class="step"><span>2</span><div><h3>Practical learning</h3><p>Work through real scenarios in Exchange Online, Entra ID and Teams instead of just reading slides.</p></div></div>
+      <div class="step"><span>3</span><div><h3>Consultation sessions</h3><p>Bring a specific question or project and get clear, honest guidance on the best way forward.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container split">
+    <div>
+      <h2>About TechKanvas</h2>
+      <p>TechKanvas is a Microsoft 365 consulting business backed by 15 years of IT experience.</p>
+      <p>As a solo consultant, I work directly with every client. You get personal attention, plain-language explanations and practical advice drawn from real-world Microsoft 365 work, not a large company's ticket queue.</p>
+    </div>
+    <div class="values">
+      <div class="value"><strong>15 years</strong><span>of IT experience</span></div>
+      <div class="value"><strong>1-on-1</strong><span>personal engagement</span></div>
+      <div class="value"><strong>Practical</strong><span>real-world knowledge</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section alt">
+  <div class="container split">
+    <div>
+      <h2>Contact</h2>
+      <p class="section-intro left">Have a question or a project in mind? Send a message and I will get back to you as soon as I can.</p>
+      <p><strong>Email:</strong> <a href="mailto:inquiry@techkanvas.com">inquiry@techkanvas.com</a></p>
+      <p><strong>Best for:</strong> coaching, setup, support and advisory inquiries.</p>
+      <a href="mailto:inquiry@techkanvas.com?subject=Consultation%20Request" class="btn">Send Email</a>
+    </div>
+    <form id="contact-form" class="form" novalidate>
+      <label>Name<input type="text" name="name" required autocomplete="name"></label>
+      <label>Email<input type="email" name="email" required autocomplete="email"></label>
+      <label>I’m interested in
+        <select name="topic">
+          <option>One-on-One Coaching</option>
+          <option>Setup and Consultation</option>
+          <option>Technical Support</option>
+          <option>Business Advisory</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label>Message<textarea name="message" rows="5" required></textarea></label>
+      <button type="submit" class="btn">Send Inquiry</button>
+      <p class="form-note" id="form-note" role="status">This opens your email app with your message ready to send to inquiry@techkanvas.com.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container foot">
+    <span>&copy; <span id="year">2026</span> TechKanvas. Microsoft 365 consulting.</span>
+    <a href="mailto:inquiry@techkanvas.com">inquiry@techkanvas.com</a>
+  </div>
+</footer>
+<script>
+(function () {
+  var toggle = document.querySelector('.menu-toggle');
+  var links = document.getElementById('nav-links');
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { links.classList.remove('open'); toggle.setAttribute('aria-expanded', false); }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var form = document.getElementById('contact-form');
+  var note = document.getElementById('form-note');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = form.elements, ok = true;
+    ['name', 'email', 'message'].forEach(function (n) {
+      var bad = !f[n].value.trim() || (n === 'email' && !/^\S+@\S+\.\S+$/.test(f[n].value));
+      f[n].classList.toggle('invalid', bad);
+      if (bad) ok = false;
+    });
+    if (!ok) { note.textContent = 'Please complete the highlighted fields.'; return; }
+    var subject = 'Inquiry: ' + f.topic.value;
+    var body = 'Name: ' + f.name.value + '\nEmail: ' + f.email.value + '\nTopic: ' + f.topic.value + '\n\n' + f.message.value;
+    window.location.href = 'mailto:inquiry@techkanvas.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    note.textContent = 'Opening your email app. If nothing opens, email inquiry@techkanvas.com directly.';
+  });
+})();
+
+</script>
+</body>
+</html>
